@@ -10,9 +10,9 @@ kml2geojson.main.convert('/path to .kml file/', '/path to save JSON file/')
 
 
 ## command line interface 
+```
 sentinelsat -u <user> -p <password> -g <geojson>
-
-
+```
 
 
 # Sentinel1-to-Inteferogeam-Processing
