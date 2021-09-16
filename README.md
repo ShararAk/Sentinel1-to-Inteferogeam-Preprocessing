@@ -1,19 +1,20 @@
 # Downloading Sentinel1 
 
 It is straightforward to search for, download, and download Sentinel1 images and their metadata using the Copernicus Open Access Hub via Sentinelsat.
-A basic search query consists of a search polygon as well as the username and password to access the Copernicus Open Access Hub. Search regions should be given as GeoJSON polygons, which may be converted from a .kml file using kml2geojson.
+Using the username and password to access the Copernicus Open Access Hub, execute a basic search query and download all Sentinel-1 scenes of type SLC across a search polygon for starting and ending acquisition dates. Search regions should be given as GeoJSON polygons, which may be converted from a .kml file using kml2geojson.
 
 ```ruby
 require  'kml2geojson'
 kml2geojson.main.convert('/path to .kml file/', '/path to save JSON file/')
 ```
 
-
+Search and download all Sentinel-1 scenes of type SLC over a search polygon, in descending orbit for the year 2015.
 ## command line interface 
-```
-sentinelsat -u <user> -p <password> -g <geojson>
-```
 
+```ruby
+sentinelsat -u <user> -p <password> -g <search_polygon.geojson> -s 20150101 -e 20151231 -producttype <SLC> -q "orbitdirection=Descending" -url "https://scihub.copernicus.eu/dhus"
+
+```
 
 # Sentinel1-to-Inteferogeam-Processing
 
