@@ -3,8 +3,8 @@
 It is straightforward to search for, download, and download Sentinel1 images and their metadata using the Copernicus Open Access Hub via Sentinelsat.
 A basic search query consists of a search polygon as well as the username and password to access the Copernicus Open Access Hub. Search regions should be given as GeoJSON polygons, which may be converted from a .kml file using kml2geojson.
 
-```
-import kml2geojson
+```ruby
+require  'kml2geojson'
 kml2geojson.main.convert('/path to .kml file/', '/path to save JSON file/')
 ```
 
