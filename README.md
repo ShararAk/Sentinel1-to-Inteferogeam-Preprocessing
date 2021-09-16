@@ -1,4 +1,4 @@
-# Sentinel1-to-Inteferogeam-Preprocessing
+# Sentinel1-to-Inteferogeam-Processing
 
 ## Graph Processing Framework (GPF)
 The SNAP architecture provides a flexible Graph Processing Framework (GPF) allowing the user to create processing graphs for batch processing and customized processing chains. The Graph Builder, in SNAP-Desktop, allows the user to graphically assemble graphs from a list of available operators and connect operator nodes to their sources. 
