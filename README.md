@@ -5,7 +5,7 @@ Using the username and password to access the Copernicus Open Access Hub, execut
 
 ```ruby
 require  'kml2geojson'
-kml2geojson.main.convert('/path to .kml file/', '/path to save JSON file/')
+kml2geojson.main.convert('/path to .kml file/', '/path to save JSON file/Study Area/')
 ```
 
 Search and download all Sentinel-1 scenes of type SLC over a search polygon, in descending orbit for the year 2015.
