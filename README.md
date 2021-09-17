@@ -12,7 +12,27 @@ Search and download all Sentinel-1 scenes of type SLC over a search polygon, in 
 ## command line interface 
 
 ```ruby
-sentinelsat -u <user> -p <password> -g <search_polygon.geojson> -s 20150101 -e 20151231 -producttype <SLC> -q "orbitdirection=Descending" -url "https://scihub.copernicus.eu/dhus"
+sentinelsat -u <user> -p <password> -g <search_polygon.geojson> -s startingDate -e EndingDate -producttype <SLC> -q "orbitdirection=Descending" -url "https://scihub.copernicus.eu/dhus"
+
+```
+## Python API
+
+```ruby
+
+AOI = read_geojson('Study Area.geojson')
+
+# search by polygon, time, and SciHub query keywords
+api = SentinelAPI('user', 'password', 'https://scihub.copernicus.eu/dhus')
+footprint = geojson_to_wkt(AOI)
+
+products = api.query(footprint,
+                     date=('startingDate', 'EndingDate'),
+                     platformname= 'Sentinel-1',
+                     producttype='SLC',
+                     sensoroperationalmode= 'IW',
+                     orbitdirection= 'DESCENDING')
+# download all results from the search
+api.download_all(products)
 
 ```
 
