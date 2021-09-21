@@ -30,41 +30,8 @@ python DownloadSentinel1.py -U=<user> -P=<password> -AOI=<search_polygon.geojson
 You can view all subswaths of the downloded product, save data as a shapefile, JSON, or CSV and interact with data using a webmap. In addition, you can add a polygon to visualize its extent with regards to the data.
 
 ```ruby
-import numpy as np 
-import json
-import sys
-import argparse
-# To use it as a module copy stsa.py to your work directory. (https://github.com/pbrotoisworo/s1-tops-split-analyzer)
-from stsa import TopsSplitAnalyzer
-
-parser = argparse.ArgumentParser(description="Visualize Sentinel1")
-
-parser.add_argument('--Image','-I', action="store", type=str, required=True,help="Please indicate the path to downloaded sentinel1 Image")
-parser.add_argument('--Polygon','-P', type=str, required=True, help="Please indicate the path to Shapefile of your area of interest")
-
-args =  parser.parse_args(sys.argv[1:])
-
-# Create object
-s1 = TopsSplitAnalyzer(image=args.Image, target_subswaths=['iw1', 'iw2', 'iw3'], polarization='vv')
-
-# Write to shapefile
-s1.to_shapefile('data.shp')
-
-# Get JSON
-s1.to_json('json_output.json')
-
-# Write to CSV
-s1.to_csv('output.csv')
-
-# The shapefile stored in a geopandas dataframe
-print(s1.df)
-
-# Visualize on a webmap with additional polygon
-#s1.visualize_webmap(polygon=args.Polygon)
-my_geoseries = my_geoseries.set_crs("EPSG:4326")
-s1.visualize_webmap()
+ python VisualizeSentinel1.py -I=<S1_image.zip>  -P=<search_polygon.shp>
 ```
-
 
 # Sentinel1-to-Inteferogeam-Processing
 
