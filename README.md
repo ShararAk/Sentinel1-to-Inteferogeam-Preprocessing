@@ -45,6 +45,8 @@ s1 = TopsSplitAnalyzer(image='Image.zip', target_subswaths=['iw1', 'iw2', 'iw3']
 s1.visualize_webmap(polygon='Area of Interest.shp')
 ```
 
+![Image of Yaktocat](https://github.com/ShararAk/Sentinel1-to-Inteferogeam-Preprocessing/blob/main/Capture.PNG)
+
 # Sentinel1-to-Inteferogeam-Processing
 
 ## Graph Processing Framework (GPF)
