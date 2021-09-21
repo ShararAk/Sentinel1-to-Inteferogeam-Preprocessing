@@ -8,7 +8,7 @@ require  'kml2geojson'
 kml2geojson.main.convert('/path to .kml file/', '/path to save JSON file/Study Area/')
 ```
 
-Search and download all Sentinel-1 scenes of type SLC over a search polygon, in descending orbit for the year 2015.
+Search and download all Sentinel-1 scenes of type SLC over a search polygon, in descending orbit for a specific time.
 ## command line interface 
 
 ```ruby
@@ -16,23 +16,14 @@ sentinelsat -u <user> -p <password> -g <search_polygon.geojson> -s startingDate 
 
 ```
 ## Python API
+Authentication is required by the Copernicus Open Access Hub and, most likely, by the rest of Data Hubs. SentinelAPI (your username>, your password>) can be used to provide your credentials.
+Copernicus Open Access Hub no longer stores all products available for quick access. Offline products can be requested from the Long Term Archive (LTA) and are expected to be accessible within 24 hours.
+In this example, we query Sentinel-1 scenes for a certain area and convert the results to a Pandas DataFrame. After that, the DataFrame is sorted by platformname and relativeorbitnumber. We restrict the query to the first two results within our timeframe. The product's availability will be checked, and a list of offline and online products will be provided. Online products will start downloading instantly, while offline products will start retrieving in the background.
 
+  
 ```ruby
 
-AOI = read_geojson('Study Area.geojson')
-
-# search by polygon, time, and SciHub query keywords
-api = SentinelAPI('user', 'password', 'https://scihub.copernicus.eu/dhus')
-footprint = geojson_to_wkt(AOI)
-
-products = api.query(footprint,
-                     date=('startingDate', 'EndingDate'),
-                     platformname= 'Sentinel-1',
-                     producttype='SLC',
-                     sensoroperationalmode= 'IW',
-                     orbitdirection= 'DESCENDING')
-# download all results from the search
-api.download_all(products)
+python DownloadSentinel1.py -U=<user> -P=<password> -AOI=<search_polygon.geojson> -SD=startingDate -ED=EndingDate
 
 ```
 
