@@ -27,7 +27,7 @@ python DownloadSentinel1.py -U=<user> -P=<password> -AOI=<search_polygon.geojson
 
 ```
 
-You can view all subswaths of the downloded product, save data as a shapefile, JSON, or CSV and interact with data using a webmap. In addition, you can add a polygon to visualize its extent with regards to the data.
+You can view all subswaths of the downloded product, save data as a shapefile, JSON, or CSV.
 
 ```ruby
  python VisualizeSentinel1.py -I=<S1_image.zip>  -P=<search_polygon.shp>
@@ -36,6 +36,13 @@ Or
 
 ```ruby
 python stsa.py -zip Image.zip --swath iw2 iw3 -polar vv -shp out_shp.shp -csv out_csv.csv -json out_json.jso
+```
+You can also interact it with data using a webmap. In addition, you can add a polygon to visualize its extent with regards to the data.
+
+```ruby
+from stsa import TopsSplitAnalyzer
+s1 = TopsSplitAnalyzer(image='Image.zip', target_subswaths=['iw1', 'iw2', 'iw3'], polarization='vv')
+s1.visualize_webmap(polygon='Area of Interest.shp')
 ```
 
 # Sentinel1-to-Inteferogeam-Processing
