@@ -32,6 +32,11 @@ You can view all subswaths of the downloded product, save data as a shapefile, J
 ```ruby
  python VisualizeSentinel1.py -I=<S1_image.zip>  -P=<search_polygon.shp>
 ```
+Or
+
+```ruby
+python stsa.py -zip Image.zip --swath iw2 iw3 -polar vv -shp out_shp.shp -csv out_csv.csv -json out_json.jso
+```
 
 # Sentinel1-to-Inteferogeam-Processing
 
