@@ -66,4 +66,16 @@ All needed operators for generating an interferogram on two Single Sentinel1 dat
 You could execute the graphs using the following command, adjusting the file path and other arguments to match yours. Henceforth, the two variables $input and $output must always be defined.
 first the full path to your graph .xml file and second the path where the downloaded Sentinel 2 zip-files are located.
 
+${Input1Path}
+${Input2Path}
+${subswath1}
+${subswath2}
+${subswath3}
+${firstBurstIndex1}
+${firstBurstIndex2}
+${firstBurstIndex3}
+${lastBurstIndex1}
+${lastBurstIndex2}
+${lastBurstIndex3}
+${OutputPath}
 gpt <GraphFile.xml> [options] [<source-file-1> <source-file-2> ...]
