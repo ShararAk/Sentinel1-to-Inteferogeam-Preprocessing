@@ -76,6 +76,5 @@ ${lastBurstIndex3} : The ending range of the desired IW3 subswath bursts.
 ${OutputPath} : The full path to save the final product.
 
 ```ruby
-gpt <GraphFile.xml> [options] [<source-file-1> <source-file-2> ...]
+gpt <GraphFile.xml> -PInput1Path=<source-file-1> -PInput2Path=<source-file-2> -PfirstBurstIndex1=1 -PlastBurstIndex1=2 -PfirstBurstIndex2=1 -PlastBurstIndex2=2 -PfirstBurstIndex3=1 -PlastBurstIndex3=2 -POutputPath=<output-Path>
 ```
-
