@@ -45,23 +45,22 @@ s1 = TopsSplitAnalyzer(image='Image.zip', target_subswaths=['iw1', 'iw2', 'iw3']
 s1.visualize_webmap(polygon='Area of Interest.shp')
 ```
 
-![Image of Yaktocat](https://github.com/ShararAk/Sentinel1-to-Inteferogeam-Preprocessing/blob/main/Capture.PNG)
+![Image of Webmap](https://github.com/ShararAk/Sentinel1-to-Inteferogeam-Preprocessing/blob/main/Capture.PNG)
 
 # Sentinel1-to-Inteferogeam-Processing
 
 ## Graph Processing Framework (GPF)
-The SNAP architecture provides a flexible Graph Processing Framework (GPF) allowing the user to create processing graphs for batch processing and customized processing chains. The Graph Builder, in SNAP-Desktop, allows the user to graphically assemble graphs from a list of available operators and connect operator nodes to their sources. 
+The SNAP architecture includes a flexible Graph Processing Framework (GPF) that allows users to construct processing graphs for batch processing as well as customizable processing chains. In SNAP-Desktop, the GraphBuilder in SNAP Desktop allows users to graphically construct complicated graphs from a list of available operators and link operator nodes to their sources. See the Sentinel-1 Toolbox Graph Building tutorial to learn more about how to drop in operators, connect them, and specify parameters. When you save a graph, the parameters for the current data product(s) are also saved to the graph file. To reuse the graph from the command line and make the graph generic for any input product, some key values for some parameters were deleted or replaced.
 
-The graphs are saved here for batch processing from the command line.
+![Image of First Graph](https://github.com/ShararAk/Sentinel1-to-Inteferogeam-Preprocessing/blob/main/Capture.PNG)
+
+![Image of Secon Graph](https://github.com/ShararAk/Sentinel1-to-Inteferogeam-Preprocessing/blob/main/Capture.PNG)
+
 
 ## The SNAP Graph Processing Tool (GPT)
-SNAP EO Data Processors are implemented as GPF operators and can be invoked via the Windows or UNIX command-line using the GPF Graph Processing Tool gpt which can be found in the bin directory of your SNAP installation.
+SNAP EO Data Processors are implemented as GPF operators and can be invoked via the Windows or UNIX command-line using the GPF Graph Processing Tool (gpt) which can be found in the bin directory of your SNAP installation. Here are two graphs that we generated in SNAP and then modified to handle all data automatically using the GPT.
 
-## Calling GPT with a Graph 
-The GraphBuilder in SNAP Desktop could be used to construct complicated graphs with interconnected operators. See the Sentinel-1 Toolbox Graph Building tutorial to learn more about how to drop in operators, connect them, and specify parameters.
-When you save a graph, the parameters you have specified for the current data product(s) are also saved to the graph file. Here, to reuse the graph from the command line using gpt and to make the graph generic for any input product, some important values removed or replaced for some parameters.
-
-All required operators to generate an Interferogram on two Single Sentinel1 data are passed in an xml-encoded graph file. It Simply passing the graph as a parameter to the gpt will sufficient.
+All needed operators for generating an interferogram on two Single Sentinel1 data and subsequently producing a displacement map are given in two attached xml-encoded graph files (SAR2InSAR.xml and  InSAR2Displacement). It Simply passing the graph as a parameter to the gpt will sufficient.
 
 ## To run gpt on a graph file type:
 gpt <GraphFile.xml> [options] [<source-file-1> <source-file-2> ...]
