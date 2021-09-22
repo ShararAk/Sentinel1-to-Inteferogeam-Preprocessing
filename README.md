@@ -63,19 +63,19 @@ SNAP EO Data Processors are implemented as GPF operators and can be invoked via 
 All needed operators for generating an interferogram on two Single Sentinel1 data and subsequently producing a displacement map are given in two attached xml-encoded graph files (SAR2InSAR.xml and  InSAR2Displacement). Simply passing the graph as a parameter to the gpt will be sufficient.
 
 ## To run gpt on a graph file type
-You could execute the graphs using the following command, adjusting the file path and other arguments to match yours. Henceforth, the two variables $input and $output must always be defined.
-first the full path to your graph .xml file and second the path where the downloaded Sentinel 2 zip-files are located.
+You could execute the graphs using the following command, adjusting the file path and other arguments to match yours. Henceforth, the 9 variables must always be defined.
 
-${Input1Path}
-${Input2Path}
-${subswath1}
-${subswath2}
-${subswath3}
-${firstBurstIndex1}
-${firstBurstIndex2}
-${firstBurstIndex3}
-${lastBurstIndex1}
-${lastBurstIndex2}
-${lastBurstIndex3}
-${OutputPath}
+${Input1Path} : The full path to the first scene of the downloaded Sentinel 1 zip-file.
+${Input2Path} : The full path to the second scene of the downloaded Sentinel 1 zip-file.
+${firstBurstIndex1} : The starting range of the desired IW1 subswath bursts.
+${firstBurstIndex2} : The ending range of the desired IW1 subswath bursts.
+${firstBurstIndex3} : The starting range of the desired IW2 subswath bursts.
+${lastBurstIndex1} : The ending range of the desired IW2 subswath bursts.
+${lastBurstIndex2} : The starting range of the desired IW3 subswath bursts.
+${lastBurstIndex3} : The ending range of the desired IW3 subswath bursts.
+${OutputPath} : The full path to save the final product.
+
+```ruby
 gpt <GraphFile.xml> [options] [<source-file-1> <source-file-2> ...]
+```
+
