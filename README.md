@@ -60,7 +60,10 @@ The SNAP architecture includes a flexible Graph Processing Framework (GPF) that 
 ## The SNAP Graph Processing Tool (GPT)
 SNAP EO Data Processors are implemented as GPF operators and can be invoked via the Windows or UNIX command-line using the GPF Graph Processing Tool (gpt) which can be found in the bin directory of your SNAP installation. Here are two graphs that we generated in SNAP and then modified to handle all data automatically using the GPT.
 
-All needed operators for generating an interferogram on two Single Sentinel1 data and subsequently producing a displacement map are given in two attached xml-encoded graph files (SAR2InSAR.xml and  InSAR2Displacement). It Simply passing the graph as a parameter to the gpt will sufficient.
+All needed operators for generating an interferogram on two Single Sentinel1 data and subsequently producing a displacement map are given in two attached xml-encoded graph files (SAR2InSAR.xml and  InSAR2Displacement). Simply passing the graph as a parameter to the gpt will be sufficient.
 
-## To run gpt on a graph file type:
+## To run gpt on a graph file type
+You could execute the graphs using the following command, adjusting the file path and other arguments to match yours. Henceforth, the two variables $input and $output must always be defined.
+first the full path to your graph .xml file and second the path where the downloaded Sentinel 2 zip-files are located.
+
 gpt <GraphFile.xml> [options] [<source-file-1> <source-file-2> ...]
