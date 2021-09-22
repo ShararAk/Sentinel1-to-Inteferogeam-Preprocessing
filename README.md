@@ -86,5 +86,5 @@ ${InputPath} : The full path to the Unwrapped Interferogram which should be gene
 ${OutputPath} : The full path to save the final product.
 
 ```ruby
-gpt <InSAR2Displacement.xml< -PInputPath=<source-file.dim> -POutputPath=<output-Path>
+gpt <InSAR2Displacement.xml> -PInputPath=<source-file.dim> -POutputPath=<output-Path>
 ```
