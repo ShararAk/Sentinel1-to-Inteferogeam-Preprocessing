@@ -52,7 +52,7 @@ s1.visualize_webmap(polygon='Area of Interest.shp')
 ## Graph Processing Framework (GPF)
 The SNAP architecture includes a flexible Graph Processing Framework (GPF) that allows users to construct processing graphs for batch processing as well as customizable processing chains. In SNAP-Desktop, the GraphBuilder in SNAP Desktop allows users to graphically construct complicated graphs from a list of available operators and link operator nodes to their sources. See the Sentinel-1 Toolbox Graph Building tutorial to learn more about how to drop in operators, connect them, and specify parameters. When you save a graph, the parameters for the current data product(s) are also saved to the graph file. To reuse the graph from the command line and make the graph generic for any input product, some key values for some parameters were deleted or replaced.
 
-![Image of First Graph](https://github.com/ShararAk/Sentinel1-to-Inteferogeam-Preprocessing/blob/main/Capture.PNG)
+![Image of First Graph](https://github.com/ShararAk/Sentinel1-to-Inteferogeam-Preprocessing/blob/main/SAR2InSAR.PNG)
 
 ![Image of Secon Graph](https://github.com/ShararAk/Sentinel1-to-Inteferogeam-Preprocessing/blob/main/Capture.PNG)
 
