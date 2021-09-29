@@ -47,6 +47,51 @@ s1.visualize_webmap(polygon='Area of Interest.shp')
 
 ![Image of Webmap](https://github.com/ShararAk/Sentinel1-to-Inteferogeam-Preprocessing/blob/main/Capture.PNG)
 
+# Visualize Downloaded Sentinel1 
+
+```ruby
+import matplotlib.colors as colors
+import matplotlib.image as mpimg
+import matplotlib.pyplot as plt
+from PIL import Image
+from termcolor import colored
+from zipfile import ZipFile
+from os.path import join
+from glob import iglob
+import pandas as pd
+import numpy as np
+import snappy
+import jpy
+
+# set target folder 
+product_path = <Input Path>
+input_S1_files=sorted(list(iglob(join(product_path, '**', '*S1*.zip'), recursive=True)))
+
+name, sensing_mode, product_type, polarization, height, width, band_names = ([]for i in range(7))
+
+for i in input_S1_files:
+    sensing_mode.append(i.split("_")[3])
+    product_type.append(i.split("_")[4])
+    polarization.append(i.split("_")[-6])
+    #read with snappy
+    s1_read = snappy.ProductIO.readProduct(i)
+    name.append(s1_read.getName())
+    height.append(s1_read.getSceneRasterHeight())
+    width.append(s1_read.getSceneRasterWidth())
+    band_names.append(s1_read.getBandNames())
+    
+df_s1_read = pd.DataFrame({'Name':name, 'Sensing Mode': sensing_mode, 'Product Type': product_type, 'Polarization': polarization, 'Height': height, 'Width': width, 'Band Names': band_names}) 
+display(df_s1_read)
+# Display quicklook -First image
+with ZipFile(input_S1_files[0], 'r') as qck_look:
+    qck_look= qck_look.open(name[0] + '.SAFE/preview/quick-look.png')
+    img = Image.open(qck_look)
+    plt.figure(figsize=(15,15))
+    plt.title('Quicklook visualisation .'+name[0]+'\n')
+    plt.axis('off')
+    plt.imshow(img);
+    ```
+![Image of Second Graph](https://github.com/ShararAk/Sentinel1-to-Inteferogeam-Preprocessing/blob/main/InSAR2Displacement.PNG)
 # Sentinel1-to-Inteferogeam-Processing
 
 ## Graph Processing Framework (GPF)
