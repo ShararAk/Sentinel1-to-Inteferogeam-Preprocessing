@@ -50,6 +50,7 @@ s1.visualize_webmap(polygon='Area of Interest.shp')
 # Visualize Downloaded Sentinel1 
 
 ```ruby
+
 import matplotlib.colors as colors
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
@@ -90,10 +91,11 @@ with ZipFile(input_S1_files[0], 'r') as qck_look:
     plt.title('Quicklook visualisation .'+name[0]+'\n')
     plt.axis('off')
     plt.imshow(img);
-    ```
+    
+ ```
+ 
 ![Image of Table](https://github.com/ShararAk/Sentinel1-to-Inteferogeam-Preprocessing/blob/main/Sentinel1Table.PNG)
 ![Image of Look](https://github.com/ShararAk/Sentinel1-to-Inteferogeam-Preprocessing/blob/main/Look.PNG)
-
 
 # Sentinel1-to-Inteferogeam-Processing
 
