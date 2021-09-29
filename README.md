@@ -47,7 +47,7 @@ s1.visualize_webmap(polygon='Area of Interest.shp')
 
 ![Image of Webmap](https://github.com/ShararAk/Sentinel1-to-Inteferogeam-Preprocessing/blob/main/Capture.PNG)
 
-# Visualize Downloaded Sentinel1 
+# Quicklook visualization of Downloaded Sentinel1 images
 
 ```ruby
 
