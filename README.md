@@ -91,7 +91,10 @@ with ZipFile(input_S1_files[0], 'r') as qck_look:
     plt.axis('off')
     plt.imshow(img);
     ```
-![Image of Second Graph](https://github.com/ShararAk/Sentinel1-to-Inteferogeam-Preprocessing/blob/main/InSAR2Displacement.PNG)
+![Image of Table](https://github.com/ShararAk/Sentinel1-to-Inteferogeam-Preprocessing/blob/main/Sentinel1Table.PNG)
+![Image of Look](https://github.com/ShararAk/Sentinel1-to-Inteferogeam-Preprocessing/blob/main/Look.PNG)
+
+
 # Sentinel1-to-Inteferogeam-Processing
 
 ## Graph Processing Framework (GPF)
