@@ -105,6 +105,8 @@ The SNAP architecture includes a flexible Graph Processing Framework (GPF) that 
 ### SAR to InSAR
 ![Image of First Graph](https://github.com/ShararAk/Sentinel1-to-Inteferogeam-Preprocessing/blob/main/SAR2InSAR.PNG)
 
+To  create a displacement map, Two-dimensional phase unwrapping will be essential to unwrap the interferogram.  Two-dimensional phase unwrapping refers to the technique of retrieving unambiguous phase data from a 2-D array of phase values of an interferogram known only modulo 2pi rad. The Unwrapping plugin is available under SNAP plugins. Instructions are available via [ASF’s How to Phase Unwrap an Interferogram data recipe](https://asf.alaska.edu/how-to/data-recipes/create-a-dem-using-sentinel-1-data/).
+
 ### InSAR to Displacement map
 
 ![Image of Second Graph](https://github.com/ShararAk/Sentinel1-to-Inteferogeam-Preprocessing/blob/main/InSAR2Displacement.PNG)
